@@ -39,7 +39,7 @@ If a name is ambiguous and no affiliation is given, ask once (batch) before star
    - `briefing.md` — Markdown with schedule table at top, cards in meeting order
    - `briefing.html` — self-contained HTML via the template in `templates/briefing.html`
    - `briefing.pdf` — render the HTML via Edge headless: `msedge --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf="<path>\briefing.pdf" "file:///<path>/briefing.html"`. Edge is at `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` or `C:\Program Files\Microsoft\Edge\Application\msedge.exe` on this machine. Skip if Edge is unavailable.
-7. **Save** to `~/Dropbox/Claude/seminar_briefing/YYYY-MM-DD_{host-slug}/`. If host institution is unclear, ask the user once or fall back to `YYYY-MM-DD_seminar`. The parent folder `~/Dropbox/Claude/seminar_briefing/` is a git repository — after saving, `cd` in and `git add -A && git commit -m "Add briefing: {host} {date}"`.
+7. **Save** to `~/Dropbox/Claude/seminar_briefing/YYYY-MM-DD_{host-slug}/`. If host institution is unclear, ask the user once or fall back to `YYYY-MM-DD_seminar`.
 8. **Report** file paths and offer to open the HTML or PDF.
 
 ## Output structure (Markdown)
@@ -69,7 +69,7 @@ If a name is ambiguous and no affiliation is given, ask once (batch) before star
 
 ## Output location
 
-All briefings live under `~/Dropbox/Claude/seminar_briefing/` (a git repo). One subfolder per trip: `YYYY-MM-DD_{host-slug}/`. After writing files, stage and commit them with a `Add briefing: {host} {date}` message so the trip is versioned.
+All briefings live under `~/Dropbox/Claude/seminar_briefing/`. One subfolder per trip: `YYYY-MM-DD_{host-slug}/`.
 
 ## Rules
 
