@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+:root {
+  --ivory: #fbf7f0;
+  --paper: #ffffff;
+  --ink:   #1f1d1a;
+  --slate: #3a3936;
+  --g500:  #6b6864;
+  --g300:  #c9c4bd;
+  --g200:  #e3ddd3;
+  --g100:  #efeae0;
+  --clay:  #b04a2f;
+  --serif: "Iowan Old Style", "Charter", "Cambria", Georgia, serif;
+  --sans:  -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ivory:#15140f; --paper:#1c1a16; --ink:#f1ebdf; --slate:#d8d2c4;
+          --g500:#a39d92; --g300:#3a3733; --g200:#2a2722; --g100:#22201b; --clay:#e87a5b; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--ivory); color:var(--ink); font-family:var(--serif); font-size:16px; line-height:1.55; }
+.page { max-width: 900px; margin: 0 auto; padding: 36px 28px 80px; }
+header.hero { border-bottom: 2px solid var(--g300); padding-bottom: 16px; margin-bottom: 28px; }
+header.hero h1 { margin: 0 0 6px; font-size: 28px; font-weight: 600; letter-spacing: -0.01em; }
+header.hero .meta { color: var(--g500); font-family: var(--sans); font-size: 13px; }
+h2 { font-family: var(--sans); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+     color: var(--clay); margin: 40px 0 14px; font-weight: 600; }
+table.schedule { width: 100%; border-collapse: collapse; background: var(--paper); font-family: var(--sans);
+                 font-size: 14px; border: 1px solid var(--g200); }
+table.schedule th, table.schedule td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--g200); }
+table.schedule th { background: var(--g100); font-weight: 600; color: var(--slate); }
+table.schedule tr.person td { color: var(--ink); }
+table.schedule tr.fluff td { color: var(--g500); font-style: italic; }
+.card { background: var(--paper); border: 1px solid var(--g200); border-left: 3px solid var(--clay);
+        border-radius: 4px; padding: 18px 22px; margin-bottom: 18px; }
+.card h3 { margin: 0 0 4px; font-size: 19px; font-weight: 600; }
+.card .sub { color: var(--g500); font-family: var(--sans); font-size: 13px; margin-bottom: 12px; }
+.card .field { margin: 10px 0; }
+.card .field .label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+                      color: var(--clay); font-weight: 600; display: block; margin-bottom: 3px; }
+.card .field .paper-title { font-style: italic; }
+.card .field .paper-meta { color: var(--g500); font-family: var(--sans); font-size: 12px; }
+.card.flagged { border-left-color: #c08a2a; background: #fffaf0; }
+@media (prefers-color-scheme: dark) {
+  .card.flagged { background: #2a2418; border-left-color: #d8a13a; }
+}
+footer { margin-top: 60px; padding-top: 16px; border-top: 1px solid var(--g200);
+         color: var(--g500); font-family: var(--sans); font-size: 12px; text-align: center; }
+@media print {
+  body { background: white; }
+  .card { break-inside: avoid; border-left-width: 2px; }
+  .page { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="hero">
+  <h1>{{TITLE}}</h1>
+  <div class="meta">{{SUBTITLE}}</div>
+</header>
+
+<h2>Schedule</h2>
+{{SCHEDULE_TABLE}}
+
+<h2>Attendees</h2>
+{{ATTENDEE_CARDS}}
+
+<footer>Generated {{GENERATED_AT}} by seminar-prep · Pedro Saffi</footer>
+</div>
+</body>
+</html>
